@@ -21,13 +21,58 @@ client.on("ready", () => {
 
 let Counter = 0
 
+const countOccurences = function(string, word) {
+    return string.split(word).length - 1;
+}
 
 client.on("messageCreate", (message) => {
+
+    if (message.content.match(/code$/gmi)) {
+        message.reply("I see some hacking out there!")
+    }
+
+
+    if (message.content.match(/dev$/gmi) && message.author.username !== "bugss") {
+        message.reply("Hello there, dev!\nGot an Update?")
+    }
+
+    //
+
+    if (countOccurences(message.content, "and") > 1) {
+        message.reply(`Too much same words in Your sentence, ${message.author}!`)
+    }
+
+    if (message.content.match(/cat$/gmi)) {
+
+        // const user = message.mentions.members.first();
+        // if(!user) return;
+
+        const colors = [
+            0xffffff,
+            0x000000,
+            0x0000ff,
+            0xff0000,
+            0x7a7a7a,
+            0x00ffff,
+            0xffd700,
+            0x4b0082
+        ]
+
+        const embed = new Discord.MessageEmbed()
+            .setTitle('Attachment')
+            .setDescription(`${message.author} is answering with a cat.`)
+            .setColor(colors[Math.floor(Math.random() * colors.length)])
+            // .setImage('http://62.77.155.157/cat1.gif') // by url address
+            .setImage('attachment://cat1.gif');
+        message.channel.send({ embeds: [embed], files: ['./pictures/cat1.gif']})
+    }
+
+
 
     if (message.content.match(/team$/gmi) && message.author.username !== "bugss") {
         Counter++
         const embed = new Discord.MessageEmbed()
-            .setTitle("I'm already looking for you a new team!")
+            .setTitle("I'm already searching you a new team!")
             .setImage('attachment://i.png')
         message.channel.send({embeds: [embed], files: ['./pictures/team.png']})
     }
@@ -69,6 +114,11 @@ client.on("messageCreate", (message) => {
 
     if (message.content.match(/welcome$/gmi) && message.author.username !== "bugss") {
         // let counter = message.content.split("work").length - 1
+        const embedss = new Discord.MessageEmbed()
+            .setTitle("\"Knock, knock.\"\n" +
+                "\"Who's there?\"")
+        message.channel.send({embeds: [embedss]})
+
         message.reply("\"Knock, knock.\"\n" +
             "\"Who's there?\"")
         setTimeout(function () {
@@ -98,6 +148,7 @@ client.on("messageCreate", (message) => {
         message.channel.send({embeds: [embed], files: ['./pictures/but.png']})
         Counter++
     }
+
     //console.log("count it", Counter * 10)
 })
 
