@@ -27,13 +27,13 @@ client.on("messageCreate", (message) => {
     //         console.log( message.author.username)
     if (message.content.match(/yes/gmi)) {
         message.reply("Hiiii")
-        Counter ++
+        Counter++
     }
 
 
     if (message.content.match(/work/gmi)) {
         let counter = message.content.split("work").length - 1
-        Counter ++
+        Counter++
         for (let i = 0; i < counter; i++) {
             message.reply("no")
             message.react('😾')
@@ -45,34 +45,45 @@ client.on("messageCreate", (message) => {
         }
     }
 
-
-    if (message.content.match(/like/gmi)  && message.author.username !== "bugss") {
-        message.reply("like")
+    if (message.content.match(/welcome/gmi)) {
+        // let counter = message.content.split("work").length - 1
+        message.reply("\"Knock, knock.\"\n" +
+            "\"Who's there?\"")
+        setTimeout(function () {
+            const embed = new Discord.MessageEmbed()
+                .setImage('attachment://welcome.png')
+            message.channel.send({embeds: [embed], files: ['./pictures/welcome.png']})
+        },1500)
         Counter ++
+    }
+
+
+    if (message.content.match(/like/gmi) && message.author.username !== "bugss") {
+        message.reply("like")
+        Counter++
 
     }
 
 
     if (message.content.match(/can/gmi) && message.author.username !== "bugss") {
-        Counter ++
+        Counter++
 
         const embed = new Discord.MessageEmbed()
             .setTitle("Can February March? No, but April May!")
             .setImage('attachment://you.png')
-        message.channel.send({ embeds: [embed], files: ['./pictures/you.png']})
+        message.channel.send({embeds: [embed], files: ['./pictures/you.png']})
 
     }
 
     if (message.content.match(/but/gmi) && message.author.username !== "bugss") {
         const embed = new Discord.MessageEmbed()
-            .setTitle(`But you own me already ${Counter} DOGECOIN \n but next time it'll be ${Counter + 1} DOGECOIN.`)//(`Server icon of ${message.guild.name}`)//("But you own me already  DOGECOIN \n but next time it'll be 51 DOGECOIN.")
+            .setTitle(`But you own me already ${Counter + 1} DOGECOIN \n but next time it'll be ${Counter + 2} DOGECOIN.`)//(`Server icon of ${message.guild.name}`)//("But you own me already  DOGECOIN \n but next time it'll be 51 DOGECOIN.")
             .setImage('attachment://but.png')
-        message.channel.send({ embeds: [embed], files: ['./pictures/but.png']})
-        Counter ++
+        message.channel.send({embeds: [embed], files: ['./pictures/but.png']})
+        Counter++
     }
-console.log("count it", Counter * 10)
+    console.log("count it", Counter * 10)
 })
-
 
 
 client.login(TOKEN)
