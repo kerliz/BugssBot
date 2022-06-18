@@ -18,17 +18,22 @@ client.on("ready", () => {
     console.log("Logged in as " + client.user.tag)
 })
 
-// can markidega
+
+let Counter = 0
 
 
 client.on("messageCreate", (message) => {
-    if (message.content == "yes") {
+
+    //         console.log( message.author.username)
+    if (message.content.match(/yes/gmi)) {
         message.reply("Hiiii")
+        Counter ++
     }
 
-    if (message.content.includes("work")) {
+
+    if (message.content.match(/work/gmi)) {
         let counter = message.content.split("work").length - 1
-        console.log(counter)
+        Counter ++
         for (let i = 0; i < counter; i++) {
             message.reply("no")
             message.react('😾')
@@ -41,26 +46,32 @@ client.on("messageCreate", (message) => {
     }
 
 
-    if (message.content.includes("like")  && message.author.username !== "bugss") {
-        console.log( message.author.username)
+    if (message.content.match(/like/gmi)  && message.author.username !== "bugss") {
         message.reply("like")
+        Counter ++
+
     }
 
+
     if (message.content.match(/can/gmi) && message.author.username !== "bugss") {
+        Counter ++
+
         const embed = new Discord.MessageEmbed()
             .setTitle("Can February March? No, but April May!")
             .setImage('attachment://you.png')
-        message.channel.send({ embeds: [embed], files: ['./you.png']})
+        message.channel.send({ embeds: [embed], files: ['./pictures/you.png']})
 
     }
 
+    if (message.content.match(/but/gmi) && message.author.username !== "bugss") {
+        const embed = new Discord.MessageEmbed()
+            .setTitle(`But you own me already ${Counter} DOGECOIN \n but next time it'll be ${Counter + 1} DOGECOIN.`)//(`Server icon of ${message.guild.name}`)//("But you own me already  DOGECOIN \n but next time it'll be 51 DOGECOIN.")
+            .setImage('attachment://but.png')
+        message.channel.send({ embeds: [embed], files: ['./pictures/but.png']})
+        Counter ++
+    }
+console.log("count it", Counter * 10)
 })
-
-
-// regexp
-
-
-
 
 
 
