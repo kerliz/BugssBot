@@ -24,48 +24,64 @@ let Counter = 0
 
 client.on("messageCreate", (message) => {
 
-    //         console.log( message.author.username)
-    if (message.content.match(/yes/gmi)) {
-        message.reply("Hiiii")
+    if (message.content.match(/team$/gmi) && message.author.username !== "bugss") {
         Counter++
+        const embed = new Discord.MessageEmbed()
+            .setTitle("I'm already looking for you a new team!")
+            .setImage('attachment://i.png')
+        message.channel.send({embeds: [embed], files: ['./pictures/team.png']})
     }
 
-
-    if (message.content.match(/work/gmi)) {
-        let counter = message.content.split("work").length - 1
+    if (message.content.match(/i$/gmi) && message.author.username !== "bugss") {
         Counter++
-        for (let i = 0; i < counter; i++) {
-            message.reply("no")
-            message.react('😾')
-            setTimeout(function () {
-                const embed = new Discord.MessageEmbed()
-                    .setImage('https://img.joomcdn.net/d6b061ccfef97b7e216f326d08003551532c6d1e_1024_1024.jpeg');
-                message.channel.send({embeds: [embed]})
-            }, 2000)
-        }
+        const embed = new Discord.MessageEmbed()
+            .setTitle("Oops I did it again.")
+            .setImage('attachment://i.png')
+        message.channel.send({embeds: [embed], files: ['./pictures/i.png']})
     }
 
-    if (message.content.match(/welcome/gmi)) {
+    if (message.content.match(/if$/gmi) && message.author.username !== "bugss") {
+        Counter++
+        const embed = new Discord.MessageEmbed()
+            .setTitle("if (sad() === true) {\n" +
+                "      sad.stop();\n" +
+                "      beAwesome();\n" +
+                "}")
+            .setImage('attachment://if.png')
+        message.channel.send({embeds: [embed], files: ['./pictures/if.png']})
+    }
+
+    if (message.content.match(/discord$/gmi) && message.author.username !== "bugss") {
+        Counter++
+        const embed = new Discord.MessageEmbed()
+            .setTitle("how many Discord users does it take to change a lightbulb? None. They prefer dark mode.")
+            .setImage('attachment://discord.png')
+        message.channel.send({embeds: [embed], files: ['./pictures/discord.png']})
+    }
+
+    if (message.content.match(/we$/gmi) && message.author.username !== "bugss") {
+        Counter++
+        const embed = new Discord.MessageEmbed()
+            .setTitle("Next time \"We will We will ban you\"!")
+            .setImage('attachment://we.png')
+        message.channel.send({embeds: [embed], files: ['./pictures/we.png']})
+    }
+
+    if (message.content.match(/welcome$/gmi) && message.author.username !== "bugss") {
         // let counter = message.content.split("work").length - 1
         message.reply("\"Knock, knock.\"\n" +
             "\"Who's there?\"")
         setTimeout(function () {
             const embed = new Discord.MessageEmbed()
+                .setTitle("I'm not mic, I'm Kristers")
                 .setImage('attachment://welcome.png')
             message.channel.send({embeds: [embed], files: ['./pictures/welcome.png']})
-        },1500)
-        Counter ++
-    }
-
-
-    if (message.content.match(/like/gmi) && message.author.username !== "bugss") {
-        message.reply("like")
+        }, 1500)
         Counter++
-
     }
 
 
-    if (message.content.match(/can/gmi) && message.author.username !== "bugss") {
+    if (message.content.match(/can$/gmi) && message.author.username !== "bugss") {
         Counter++
 
         const embed = new Discord.MessageEmbed()
@@ -75,7 +91,7 @@ client.on("messageCreate", (message) => {
 
     }
 
-    if (message.content.match(/but/gmi) && message.author.username !== "bugss") {
+    if (message.content.match(/but$/gmi) && message.author.username !== "bugss") {
         const embed = new Discord.MessageEmbed()
             .setTitle(`But you own me already ${Counter + 1} DOGECOIN \n but next time it'll be ${Counter + 2} DOGECOIN.`)//(`Server icon of ${message.guild.name}`)//("But you own me already  DOGECOIN \n but next time it'll be 51 DOGECOIN.")
             .setImage('attachment://but.png')
