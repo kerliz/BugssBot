@@ -82,7 +82,7 @@ client.on("messageCreate", (message) => {
         message.channel.send({embeds: [embed], files: ['./pictures/but.png']})
         Counter++
     }
-    console.log("count it", Counter * 10)
+    //console.log("count it", Counter * 10)
 })
 
 
