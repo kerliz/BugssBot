@@ -6,7 +6,7 @@
 
 
 const Discord = require("discord.js")
-const TOKEN = "OTg3NjI1Mjc2ODY1NDEzMTIw.GYYW7Y.zWYnxXfCe9EJ1yG4QXigX6txmzLS1tvHXTVvIY"
+const TOKEN = "OTg3NjI1Mjc2ODY1NDEzMTIw.Gk-w4z.aCO5-YSsoqfOtdSu-HvaZiOLOd7PzQMoAzyJbc"
 const client = new Discord.Client({
     intents: [
         "GUILDS",
@@ -18,6 +18,7 @@ client.on("ready", () => {
     console.log("Logged in as " + client.user.tag)
 })
 
+// can markidega
 
 
 client.on("messageCreate", (message) => {
