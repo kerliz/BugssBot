@@ -1,12 +1,5 @@
-// using bad word - you would have to add that amount of money to the swearing jar
-
-//statistics bot
-// longest message
-// who wrote the most
-
-
 const Discord = require("discord.js")
-const TOKEN = "OTg3NjI1Mjc2ODY1NDEzMTIw.Gk-w4z.aCO5-YSsoqfOtdSu-HvaZiOLOd7PzQMoAzyJbc"
+const TOKEN = "YOUR_TOKEN"
 const client = new Discord.Client({
     intents: [
         "GUILDS",
@@ -39,14 +32,10 @@ client.on("messageCreate", (message) => {
     //
 
     if (countOccurences(message.content, "and") > 1) {
-        message.reply(`Too much same words in Your sentence, ${message.author}!`)
+        message.reply(`Too many same words in Your sentence, ${message.author}!`)
     }
 
     if (message.content.match(/cat$/gmi)) {
-
-        // const user = message.mentions.members.first();
-        // if(!user) return;
-
         const colors = [
             0xffffff,
             0x000000,
@@ -113,18 +102,12 @@ client.on("messageCreate", (message) => {
     }
 
     if (message.content.match(/welcome$/gmi) && message.author.username !== "bugss") {
-        // let counter = message.content.split("work").length - 1
-        const embedss = new Discord.MessageEmbed()
-            .setTitle("\"Knock, knock.\"\n" +
-                "\"Who's there?\"")
-        message.channel.send({embeds: [embedss]})
-
         message.reply("\"Knock, knock.\"\n" +
             "\"Who's there?\"")
         setTimeout(function () {
             const embed = new Discord.MessageEmbed()
                 .setTitle("I'm not mic, I'm Kristers")
-                .setImage('attachment://welcome.png')
+                .setImage('attachment://w   elcome.png')
             message.channel.send({embeds: [embed], files: ['./pictures/welcome.png']})
         }, 1500)
         Counter++
