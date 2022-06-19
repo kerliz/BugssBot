@@ -1,6 +1,6 @@
 # Bugss - Discord bot
 Just a simple bot to annoy you 
-- Choose your words wisely
+> Choose your words wisely
 
 ## How to run
 * Clone the repo
