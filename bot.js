@@ -101,7 +101,7 @@ client.on("messageCreate", (message) => {
         }
     }
 
-    if (message.content.match(/discord$/gmi) && message.author.username !== "bugss") {
+    if (message.content.match(/discord/i) && message.author.username !== "bugss") {
         let counter = message.content.split("discord").length - 1
         for (let i = 0; i < counter; i++) {
             Counter++
@@ -112,7 +112,7 @@ client.on("messageCreate", (message) => {
         }
     }
 
-    if (message.content.match(/we$/gmi) && message.author.username !== "bugss") {
+    if (message.content.match(/we/i) && message.author.username !== "bugss" && !message.content.includes("welcome")) {
         let counter = message.content.split("we").length - 1
         for (let i = 0; i < counter; i++) {
             Counter++
@@ -123,7 +123,7 @@ client.on("messageCreate", (message) => {
         }
     }
 
-    if (message.content.match(/welcome$/gmi) && message.author.username !== "bugss") {
+    if (message.content.match(/welcome/i) && message.author.username !== "bugss") {
         message.reply("\"Knock, knock.\"\n" +
             "\"Who's there?\"")
         setTimeout(function () {
@@ -136,7 +136,7 @@ client.on("messageCreate", (message) => {
     }
 
 
-    if (message.content.match(/can$/gmi) && message.author.username !== "bugss") {
+    if (message.content.match(/can/i) && message.author.username !== "bugss") {
         let counter = message.content.split("can").length - 1
         for (let i = 0; i < counter; i++) {
             Counter++
@@ -148,7 +148,7 @@ client.on("messageCreate", (message) => {
         }
     }
 
-    if (message.content.match(/but$/gmi) && message.author.username !== "bugss") {
+    if (message.content.match(/but/i) && message.author.username !== "bugss") {
         let counter = message.content.split("but").length - 1
         for (let i = 0; i < counter; i++) {
             const embed = new Discord.MessageEmbed()
@@ -158,6 +158,8 @@ client.on("messageCreate", (message) => {
             Counter++
         }
     }
+
+    ///we/i
 
 })
 
