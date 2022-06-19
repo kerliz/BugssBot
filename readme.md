@@ -1,6 +1,6 @@
 # Bugss - Discord bot
-
-Just a simple bot to annoy you
+Just a simple bot to annoy you 
+Choose your words wisely
 
 ## How to run
 * Clone the repo
@@ -26,4 +26,5 @@ Just a simple bot to annoy you
 ### Every time you use a trigger word you have to but dogecoins in the swaring jar
 You'll see how much you already own with word `but`
 
-#### Bot is in progress of getting more annoying!
+
+#### **Bot is in progress of getting more annoying!**
