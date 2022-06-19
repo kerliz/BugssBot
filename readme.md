@@ -1,4 +1,4 @@
-#Bugss - Discord bot
+# Bugss - Discord bot
 
 Just a simple bot to annoy you
 
